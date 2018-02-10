@@ -1,0 +1,35 @@
+import youtube_dl
+
+def download_mp3(url):
+    options = {
+        "outtmpl" : "/mp3/%(title)s.%(ext)s",
+        "format"  : "bestaudio/best",
+        "postprocessors": [{
+            "key" : "FFmpegExtractAudio",
+            "preferredcodec"   : "mp3",
+            "preferredquality" : "320"
+        }]
+    }
+    with youtube_dl.YoutubeDL(options) as ydl:
+        ydl.download([url])
+
+def download_mp4(url):
+    options = {
+        "outtmpl" : "/mp4/%(title)s.%(ext)s",
+        "format"  : "bestvideo/best"
+    }
+    with youtube_dl.YoutubeDL(options) as ydl:
+        ydl.download([url])
+
+url = "https://www.youtube.com/watch?v="
+video_id = "2Vv-BfVoq4g"
+option = "mp4"
+
+if(video_id == ""):
+    print("no youtube video id")
+else:
+    if(option == "mp3"):
+        download_mp3(url + video_id);
+    else:
+        download_mp4(url + video_id);
+    print("done")
