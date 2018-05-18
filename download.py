@@ -21,15 +21,19 @@ def download_mp4(url):
     with youtube_dl.YoutubeDL(options) as ydl:
         ydl.download([url])
 
-url = "https://www.youtube.com/watch?v="
-video_id = "2Vv-BfVoq4g"
-option = "mp4"
+"""
+Main
+"""
+if __name__ == "__main__":
+	url = "https://www.youtube.com/watch?v="
+	video_id = "2Vv-BfVoq4g"
+	option = "mp4"
 
-if(video_id == ""):
-    print("no youtube video id")
-else:
-    if(option == "mp3"):
-        download_mp3(url + video_id);
-    else:
-        download_mp4(url + video_id);
-    print("done")
+	if(video_id == ""):
+	    print("no youtube video id")
+	else:
+	    if(option == "mp3"):
+	        download_mp3(url + video_id);
+	    else:
+	        download_mp4(url + video_id);
+	    print("done")
