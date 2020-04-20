@@ -26,7 +26,7 @@ Main
 """
 if __name__ == "__main__":
 	url = "https://www.youtube.com/watch?v="
-	video_id = "2Vv-BfVoq4g"
+	video_id = input("input youtube video id:")
 	option = "mp4"
 
 	if(video_id == ""):
